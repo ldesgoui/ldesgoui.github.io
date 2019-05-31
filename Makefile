@@ -6,10 +6,10 @@ all: $(addprefix master/, CNAME index.html resume.pdf resume.html)
 
 master:
 	git clone --branch master "$(shell git config --get remote.origin.url)" "$@"
-	rm -rf $@/*
+	rm -rf "$@/*"
 
 master/CNAME: master
-	echo "ldesgoui.xyz" > $@
+	echo "ldesgoui.xyz" > "$@"
 
 master/%.html: %.md
 	pandoc --standalone --to html5 --output "$@" "$<"
