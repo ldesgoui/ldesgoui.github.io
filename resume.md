@@ -1,7 +1,3 @@
-#!/usr/bin/env nix-shell
-#!nix-shell --pure -i sh -p pandoc fira fira-mono texlive.combined.scheme-medium
-
-pandoc -s -f markdown -o resume.pdf --pdf-engine xelatex << END
 ---
 title: Lucas Desgouilles
 subtitle: Software Developer
@@ -75,5 +71,3 @@ Autonomous workflow
     Coursework includes Algorithms and Data Structures, UNIX Systems Programming.
     Achieved highest possible grade (100% + bonuses) in implementation of
     POSIX-compliant shell (4 students, 1 month).
-
-END
