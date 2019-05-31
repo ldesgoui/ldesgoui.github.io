@@ -12,3 +12,11 @@ I want to write Rust code, hire me.
 - <https://twitter.com/ldesgoui>
 - <ldesgoui@gmail.com>
 - [+336 88 24 28 20](tel:+33688242820)
+
+
+
+### Projects
+
+- [`discord_game_sdk`](https://github.com/ldesgoui/discord_game_sdk)
+- [`eia3de`](https://github.com/eia3de/eia3de)
+- [`ldesgoui.xyz`](https://github.com/ldesgoui/ldesgoui.github.io)
