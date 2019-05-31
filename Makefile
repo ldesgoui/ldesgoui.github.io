@@ -2,24 +2,27 @@
 # Makefile
 #
 
-DOMAIN := ldesgoui.xyz
-REPO := $(shell git config --get remote.origin.url)
-
-
 all: $(addprefix master/, CNAME index.html resume.pdf resume.html)
 
 master:
-	git clone --branch master "$(REPO)" "$@"
+	git clone --branch master "$(shell git config --get remote.origin.url)" "$@"
 	rm -rf $@/*
 
 master/CNAME: master
-	echo $(DOMAIN) > $@
+	echo "ldesgoui.xyz" > $@
 
 master/%.html: %.md
 	pandoc --standalone --to html5 --output "$@" "$<"
 
 master/%.pdf: %.md
 	pandoc --standalone --pdf-engine xelatex --output "$@" "$<"
+
+push: all
+	(cd master \
+		&& git add . \
+		&& git commit -m "$(shell git log -1 --pretty=format:'%s')" \
+		&& git push origin master \
+	)
 
 clean:
 	rm -rf master/*
@@ -29,7 +32,4 @@ fclean: clean
 
 re: fclean all
 
-push: all
-	(cd master && git add . && git commit -m "$(shell date)" && git push origin master)
-
-.PHONY: all clean fclean re push
+.PHONY: all push clean fclean re
