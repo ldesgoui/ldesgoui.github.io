@@ -2,20 +2,30 @@
 # Makefile
 #
 
-all: $(addprefix master/, CNAME index.html resume.pdf resume.html)
+FILES := CNAME
+FILES += index.html
+FILES += resume.pdf resume.html
+FILES += style.css
+
+GENERATED := $(addprefix master/, $(FILES))
+
+all: $(GENERATED)
 
 master:
-	git clone --branch master "$(shell git config --get remote.origin.url)" "$@"
-	rm -rf "$@/*"
+	git clone --depth 1 --branch master "$(shell git config --get remote.origin.url)" "$@"
+	rm -rf "$@"/*
 
-master/CNAME: master
-	echo "ldesgoui.xyz" > "$@"
+master/%.html: %.md | master
+	mkdir -p "$(@D)"
+	pandoc --standalone --css "/style.css" --to html5 --output "$@" "$<"
 
-master/%.html: %.md
-	pandoc --standalone --to html5 --output "$@" "$<"
-
-master/%.pdf: %.md
+master/%.pdf: %.md | master
+	mkdir -p "$(@D)"
 	pandoc --standalone --pdf-engine xelatex --output "$@" "$<"
+
+master/%: % | master
+	mkdir -p "$(@D)"
+	cp "$<" "$@"
 
 push: all
 	(cd master \
@@ -25,11 +35,22 @@ push: all
 	)
 
 clean:
-	rm -rf master/*
+	rm -f $(GENERATED)
 
 fclean: clean
 	rm -rf master
 
 re: fclean all
 
-.PHONY: all push clean fclean re
+serve: all
+	python3 -m http.server -d master
+
+watch:
+	ls -I master | entr -d make || make watch
+
+dev:
+	make watch &
+	make serve
+	pkill $$
+
+.PHONY: all push clean fclean re serve watch dev
