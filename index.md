@@ -1,9 +1,8 @@
 ---
-pagetitle: ldesgoui.xyz
+pagetitle: ldesgoui\_xyz::index
+title: Lucas Desgouilles
+subtitle: Software Developer
 ---
-
-# Lucas Desgouilles
-## Software Developer
 
 I want to write Rust code, hire me.
 
@@ -12,10 +11,14 @@ I want to write Rust code, hire me.
 - <https://twitter.com/ldesgoui>
 - <ldesgoui@gmail.com>
 
-
-
 ### Projects
 
-- [`discord_game_sdk`](https://github.com/ldesgoui/discord_game_sdk)
-- [`eia3de`](https://github.com/eia3de/eia3de)
-- [`ldesgoui.xyz`](https://github.com/ldesgoui/ldesgoui.github.io)
+- [`discord_game_sdk`](https://github.com/ldesgoui/discord_game_sdk), a wrapper
+- [`eia3de`](https://github.com/eia3de/eia3de), a video game
+- [`ldesgoui.github.io`](https://github.com/ldesgoui/ldesgoui.github.io), this website
+
+### Exercises
+
+- [`crawwwlur`](https://github.com/ldesgoui/crawwwlur), a web service to crawl websites
+- [`in1weekend`](https://github.com/ldesgoui/in1weekend), a basic ray tracer
+- [`sys_mock_example`](https://github.com/ldesgoui/sys_mock_example), an example

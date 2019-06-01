@@ -1,4 +1,5 @@
 ---
+pagetitle: ldesgoui\_xyz::resume
 title: Lucas Desgouilles
 subtitle: Software Developer
 mainfont: Fira Sans
@@ -10,9 +11,11 @@ geometry:
 - bottom=0mm
 ---
 
+<div style="display: none">
 -----
 <ldesgoui@gmail.com> | <https://ldesgoui.xyz> | <https://github.com/ldesgoui>
 -----
+</div>
 
 
 Seeking an opportunity to facilitate self-growth in a professional environment using Rust.
@@ -44,11 +47,11 @@ Autonomous workflow
 :   *Contributor to Free Software*
 
     Contributed self-documenting feature to [PostgREST](https://postgrest.org),
-    documentation to [\`specs\`](https://docs.rs/specs),
-    package definitions to [\`nixpkgs\`](https://nixos.org/nixpkgs).
-    Author of Rust library [\`discord_game_sdk\`](https://docs.rs/discord_game_sdk).
+    documentation to [`specs`](https://docs.rs/specs),
+    package definitions to [`nixpkgs`](https://nixos.org/nixpkgs).
+    Author of Rust library [`discord_game_sdk`](https://docs.rs/discord_game_sdk).
     Licensed most side projects with MIT, Apache-2.0 or GPLv3.0.
-    Contributions can be found on <https://github.com/ldesgoui>.
+    Contributions can be found at <https://github.com/ldesgoui>.
 
 2015 - 2016 (6 months)
 :   *Computer Programming Tutor* [42 - Paris](https://42.fr)
