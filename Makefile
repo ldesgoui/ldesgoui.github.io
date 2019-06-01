@@ -7,15 +7,17 @@ GENERATED += index.html
 GENERATED += resume.pdf resume.html
 GENERATED += style.css
 
-all: $(addprefix master/, $(GENERATED))
+GENERATED := $(addprefix master/, $(GENERATED))
+
+all: $(GENERATED)
 
 master:
 	git clone --depth 1 --branch master "$(shell git config --get remote.origin.url)" "$@"
 	rm --recursive --force "$@"/*
 
-master/%.html: %.md | master
+master/%.html: %.md template.html | master
 	mkdir --parents "$(@D)"
-	pandoc --standalone --css "/style.css" --to html5 --output "$@" "$<"
+	pandoc --standalone --template template.html --css /style.css --to html5 --output "$@" "$<"
 
 master/%.pdf: %.md | master
 	mkdir --parents "$(@D)"
@@ -26,6 +28,7 @@ master/%: % | master
 	cp "$<" "$@"
 
 push: all
+	minify -a master
 	(cd master \
 		&& git add . \
 		&& git commit --message "$(shell git log -1 --pretty=format:'%s')" \
