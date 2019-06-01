@@ -31,5 +31,5 @@ I want to write Rust code, hire me
   <source srcset="avatar.webp" type="image/webp">
   <source srcset="avatar.png" type="image/png">
   <source srcset="avatar.jpg" type="image/jpeg">
-  <img src="avatar.png" alt="My face" style="display: block; max-width: 100%; margin: auto" />
+  <img src="avatar.png" alt="My face" class="cheer centered-image" />
 </picture>

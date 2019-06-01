@@ -15,14 +15,10 @@ code { font-family: 'Fira Mono', monospace; }
 dd { margin-bottom: 1em; }
 dt { font-weight: bold; }
 
-.title, .subtitle { text-align: center; }
-.title { font-size: 3em; }
-.subtitle { font-size: 2em; }
-
 a { text-decoration-style: dotted; }
 a:link, a:visited { color: #8cf; }
 
-a:hover, a:focus, a:active {
+a:hover, a:focus, a:active, .cheer:hover {
   outline: 0.1em dotted #fc8;
   animation: pulse-outline-offset 200ms ease-in-out infinite;
 }
@@ -41,6 +37,16 @@ a:active, ::selection {
     +0.03em +0.03em #fc8,
     +0.04em +0.04em #fc8,
     +0.05em +0.05em #fc8;
+}
+
+.title, .subtitle { text-align: center; }
+.title { font-size: 3em; }
+.subtitle { font-size: 2em; }
+
+.centered-image {
+    display: block;
+    max-width: 100%;
+    margin: auto;
 }
 
 @keyframes pulse-outline-offset {
