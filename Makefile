@@ -2,53 +2,51 @@
 # Makefile
 #
 
-FILES := CNAME
-FILES += index.html
-FILES += resume.pdf resume.html
-FILES += style.css
+GENERATED := CNAME
+GENERATED += index.html
+GENERATED += resume.pdf resume.html
+GENERATED += style.css
 
-GENERATED := $(addprefix master/, $(FILES))
-
-all: $(GENERATED)
+all: $(addprefix master/, $(GENERATED))
 
 master:
 	git clone --depth 1 --branch master "$(shell git config --get remote.origin.url)" "$@"
-	rm -rf "$@"/*
+	rm --recursive --force "$@"/*
 
 master/%.html: %.md | master
-	mkdir -p "$(@D)"
+	mkdir --parents "$(@D)"
 	pandoc --standalone --css "/style.css" --to html5 --output "$@" "$<"
 
 master/%.pdf: %.md | master
-	mkdir -p "$(@D)"
+	mkdir --parents "$(@D)"
 	pandoc --standalone --pdf-engine xelatex --output "$@" "$<"
 
 master/%: % | master
-	mkdir -p "$(@D)"
+	mkdir --parents "$(@D)"
 	cp "$<" "$@"
 
 push: all
 	(cd master \
 		&& git add . \
-		&& git commit -m "$(shell git log -1 --pretty=format:'%s')" \
+		&& git commit --message "$(shell git log -1 --pretty=format:'%s')" \
 		&& git push origin master \
 	)
 
 clean:
-	rm -f $(GENERATED)
+	rm --force $(GENERATED)
 
 fclean: clean
-	rm -rf master
+	rm --recursive --force master
 
 re: fclean all
 
 serve: all
-	python3 -m http.server -d master
+	python3 -m http.server --directory master
 
 watch:
 	ls -I master | entr -d make || make watch
 
 dev:
-	bash -c "trap 'pkill -P $$$$' 1 2 9; make serve & make watch"
+	bash -c "trap 'pkill --parent $$$$' 1 2 9; make serve & make watch"
 
 .PHONY: all push clean fclean re serve watch dev
