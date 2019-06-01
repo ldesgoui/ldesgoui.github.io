@@ -9,7 +9,7 @@ GENERATED := CNAME
 GENERATED += index.html
 GENERATED += resume.pdf resume.html
 GENERATED += style.css
-GENERATED += avatar.webp avatar.png
+GENERATED += avatar.webp avatar.png avatar.jpg
 
 GENERATED := $(addprefix master/, $(GENERATED))
 
@@ -25,15 +25,23 @@ master/%: % | master
 
 master/%.html: %.md template.html | master
 	mkdir --parents "$(@D)"
-	pandoc --standalone --template template.html $(addprefix --css , $(CSS)) --to html5 --output "$@" "$<"
+	pandoc --standalone --template template.html $(addprefix --css , $(CSS)) --output "$@" "$<"
 
 master/%.pdf: %.md | master
 	mkdir --parents "$(@D)"
 	pandoc --standalone --pdf-engine xelatex --output "$@" "$<"
 
+master/%.webp: %.webp | master
+	mkdir --parents "$(@D)"
+	convert "$<" -quality 75 -define webp:method=6 "$@"
+
 master/%.png: %.webp | master
 	mkdir --parents "$(@D)"
-	convert "$<" "$@"
+	convert "$<" -quality 75 "$@"
+
+master/%.jpg: %.webp | master
+	mkdir --parents "$(@D)"
+	convert "$<" -quality 75 "$@"
 
 push: master clean all
 	minify -a master
