@@ -2,6 +2,9 @@
 # Makefile
 #
 
+CSS := style.css
+CSS += 'https://fonts.googleapis.com/css?family=Fira+Sans|Fira+Mono&display=swap'
+
 GENERATED := CNAME
 GENERATED += index.html
 GENERATED += resume.pdf resume.html
@@ -9,6 +12,7 @@ GENERATED += style.css
 GENERATED += avatar.webp avatar.png
 
 GENERATED := $(addprefix master/, $(GENERATED))
+
 
 all: $(GENERATED)
 
@@ -21,7 +25,7 @@ master/%: % | master
 
 master/%.html: %.md template.html | master
 	mkdir --parents "$(@D)"
-	pandoc --standalone --template template.html --css /style.css --to html5 --output "$@" "$<"
+	pandoc --standalone --template template.html $(addprefix --css , $(CSS)) --to html5 --output "$@" "$<"
 
 master/%.pdf: %.md | master
 	mkdir --parents "$(@D)"
