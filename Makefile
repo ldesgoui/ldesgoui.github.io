@@ -17,7 +17,8 @@ GENERATED := $(addprefix master/, $(GENERATED))
 all: $(GENERATED)
 
 master:
-	git clone --depth 1 --branch master "$(shell git config --get remote.origin.url)" "$@"
+	git init master
+	(cd master && git remote add origin "$(shell git config --get remote.origin.url)")
 
 master/%: % | master
 	mkdir --parents "$(@D)"
@@ -43,7 +44,7 @@ master/%.jpg: %.webp | master
 	mkdir --parents "$(@D)"
 	convert "$<" -quality 75 "$@"
 
-push: master clean all
+push: re
 	minify -a master
 	(cd master \
 		&& git add . \
@@ -52,12 +53,9 @@ push: master clean all
 	)
 
 clean:
-	rm --force -- $(shell find master -type f ! -path 'master/.git/*')
-
-fclean:
 	rm --recursive --force master
 
-re: fclean master clean all
+re: clean all
 
 serve: all
 	darkhttpd master
@@ -68,4 +66,4 @@ watch:
 dev:
 	bash -c "trap 'pkill --parent $$$$' 1 2 9; make serve & make watch"
 
-.PHONY: all push clean fclean re serve watch dev
+.PHONY: all push clean re serve watch dev
