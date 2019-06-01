@@ -6,13 +6,13 @@ This website is statically generated, the output files can be reached
 The bulk of the generation happens in the [Makefile](Makefile), it should be
 fairly easy to understand how it works by reading. It depends on the following:
 
+- [Fira Sans and Fira Mono](https://github.com/mozilla/Fira)
+- [ImageMagick](https://imagemagick.org)
+- [Pandoc](https://pandoc.org)
 - [TeX Live](https://www.tug.org/texlive)
 - [darkhttpd](http://eradman.com/entrproject)
 - [entr](http://eradman.com/entrproject)
-- [Fira Sans and Fira Mono](https://github.com/mozilla/Fira)
-- [ImageMagick](https://imagemagick.org)
 - [minify](https://github.com/tdewolff/minify)
-- [Pandoc](https://pandoc.org)
 
 I also make use of [GNU Make](https://www.gnu.org/software/make/) and
 [`nix`](https://nixos.org/nix). The dependencies can easily be installed by
