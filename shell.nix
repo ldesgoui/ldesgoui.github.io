@@ -5,6 +5,7 @@ pkgs.mkShell {
   buildInputs = with pkgs; [
     darkhttpd
     entr
+    git
     gnumake
     google-fonts
     imagemagick

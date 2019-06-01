@@ -14,7 +14,10 @@ all: $(GENERATED)
 
 master:
 	git clone --depth 1 --branch master "$(shell git config --get remote.origin.url)" "$@"
-	rm --recursive --force "$@"/*
+
+master/%: % | master
+	mkdir --parents "$(@D)"
+	cp "$<" "$@"
 
 master/%.html: %.md template.html | master
 	mkdir --parents "$(@D)"
@@ -24,15 +27,11 @@ master/%.pdf: %.md | master
 	mkdir --parents "$(@D)"
 	pandoc --standalone --pdf-engine xelatex --output "$@" "$<"
 
-master/%: % | master
-	mkdir --parents "$(@D)"
-	cp "$<" "$@"
-
-master/%.png: %.webp |
+master/%.png: %.webp | master
 	mkdir --parents "$(@D)"
 	convert "$<" "$@"
 
-push: all
+push: master clean all
 	minify -a master
 	(cd master \
 		&& git add . \
@@ -40,10 +39,10 @@ push: all
 		&& git push origin master \
 	)
 
-clean:
-	rm --force $(GENERATED)
+clean: master
+	rm --recursive --force -- $(shell ls --almost-all --ignore .git master)
 
-fclean: clean
+fclean:
 	rm --recursive --force master
 
 re: fclean all
