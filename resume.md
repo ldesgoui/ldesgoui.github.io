@@ -11,7 +11,7 @@ geometry:
 ---
 
 -----
-<ldesgoui@gmail.com> | [+336 88 24 28 20](tel:+33688242820) | <https://github.com/ldesgoui>
+<ldesgoui@gmail.com> | <https://ldesgoui.xyz> | <https://github.com/ldesgoui>
 -----
 
 
