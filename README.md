@@ -41,7 +41,7 @@ Some targets are helpers:
    usually, `clean` is defined to delete build artifacts
 - `fclean` completely deletes `master`. Note that, usually, `fclean` depends
    on `clean` and deletes the build result
-- `re` simply depends on `fclean` and `all`
+- `re` deletes and rebuilds everything
 - `serve` runs a local web server, hosting the contents of a build
 - `watch` starts a process that will `make` whenever the source files are
    touched

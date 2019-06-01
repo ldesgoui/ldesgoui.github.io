@@ -39,13 +39,13 @@ push: master clean all
 		&& git push origin master \
 	)
 
-clean: master
-	rm --recursive --force -- $(shell ls --almost-all --ignore .git master)
+clean:
+	rm --force -- $(shell find master -type f ! -path 'master/.git/*')
 
 fclean:
 	rm --recursive --force master
 
-re: fclean all
+re: fclean master clean all
 
 serve: all
 	darkhttpd master
