@@ -1,15 +1,15 @@
 @import url('https://fonts.googleapis.com/css?family=Fira+Sans|Fira+Mono');
 
 body {
-    width: 480px;
-    margin: auto;
+  max-width: 30em;
+  padding: 1em;
+  margin: auto;
 
-    background-color: #222;
-    color: #ccc;
+  background-color: #222;
+  color: #ccc;
 
-    font-family: 'Fira Sans', sans-serif;
-    font-size: 18px;
-    line-height: 1.5;
+  font-family: 'Fira Sans', sans-serif;
+  line-height: 1.5;
 }
 
 code { font-family: 'Fira Mono', monospace; }
@@ -23,28 +23,42 @@ dt { font-weight: bold; }
 
 a { text-decoration-style: dotted; }
 a:link, a:visited { color: #8cf; }
+
 a:hover, a:focus, a:active {
-    outline: 0.1em dotted #fc8;
-    animation: pulse-outline-offset 200ms ease-in-out infinite;
+  outline: 0.1em dotted #fc8;
+  animation: pulse-outline-offset 200ms ease-in-out infinite;
 }
+
 a:active, ::selection {
-    color: #fc8;
-    background-color: #48c;
-    text-shadow:
-        -0.01em -0.01em #fc8,
-        -0.02em -0.02em #fc8,
-        -0.03em -0.03em #fc8,
-        -0.04em -0.04em #fc8,
-        -0.05em -0.05em #fc8,
-        +0.01em +0.01em #fc8,
-        +0.02em +0.02em #fc8,
-        +0.03em +0.03em #fc8,
-        +0.04em +0.04em #fc8,
-        +0.05em +0.05em #fc8;
+  color: #fc8;
+  background-color: #48c;
+  text-shadow:
+    -0.01em -0.01em #fc8,
+    -0.02em -0.02em #fc8,
+    -0.03em -0.03em #fc8,
+    -0.04em -0.04em #fc8,
+    -0.05em -0.05em #fc8,
+    +0.01em +0.01em #fc8,
+    +0.02em +0.02em #fc8,
+    +0.03em +0.03em #fc8,
+    +0.04em +0.04em #fc8,
+    +0.05em +0.05em #fc8;
 }
 
 @keyframes pulse-outline-offset {
-    0%   { outline-offset: 0.0em; }
-    50%  { outline-offset: 0.1em; }
-    100% { outline-offset: 0.0em; }
+  0%   { outline-offset: 0.0em; }
+  50%  { outline-offset: 0.2em; }
+  100% { outline-offset: 0.0em; }
+}
+
+@media (max-width: 30em) {
+  body {
+    font-size: 12px;
+  }
+}
+
+@media (min-width: 40em) {
+  body {
+    font-size: 20px;
+  }
 }

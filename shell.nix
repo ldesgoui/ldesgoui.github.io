@@ -3,12 +3,13 @@
 
 pkgs.mkShell {
   buildInputs = with pkgs; [
+    darkhttpd
     entr
     gnumake
     google-fonts
+    imagemagick
     minify
     pandoc
-    python3
     texlive.combined.scheme-medium
   ];
 }

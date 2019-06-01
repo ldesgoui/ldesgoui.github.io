@@ -6,6 +6,7 @@ GENERATED := CNAME
 GENERATED += index.html
 GENERATED += resume.pdf resume.html
 GENERATED += style.css
+GENERATED += avatar.webp avatar.png
 
 GENERATED := $(addprefix master/, $(GENERATED))
 
@@ -27,6 +28,10 @@ master/%: % | master
 	mkdir --parents "$(@D)"
 	cp "$<" "$@"
 
+master/%.png: %.webp |
+	mkdir --parents "$(@D)"
+	convert "$<" "$@"
+
 push: all
 	minify -a master
 	(cd master \
@@ -44,7 +49,7 @@ fclean: clean
 re: fclean all
 
 serve: all
-	python3 -m http.server --directory master
+	darkhttpd master
 
 watch:
 	ls -I master | entr -d make || make watch
