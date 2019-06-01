@@ -49,8 +49,6 @@ watch:
 	ls -I master | entr -d make || make watch
 
 dev:
-	make watch &
-	make serve
-	pkill $$
+	bash -c "trap 'pkill -P $$$$' 1 2 9; make serve & make watch"
 
 .PHONY: all push clean fclean re serve watch dev
