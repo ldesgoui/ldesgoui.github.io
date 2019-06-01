@@ -26,7 +26,7 @@ projects.
 The default target, `all`, depends on the list of generated files in the master
 directory (`master/index.html`, ...).
 
-The `master` target fetches the current state of the website.
+The `master` target creates an empty repository pointing to the master branch.
 
 The `master/%...` targets all depend on `master` in an order-only way, this
 means that updates to `master` won't cause these targets to be considered out
