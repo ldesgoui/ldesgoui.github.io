@@ -24,7 +24,7 @@ projects.
 ## Makefile explanations
 
 The default target, `all`, depends on the list of generated files in the master
-directory (master/index.html, ...).
+directory (`master/index.html`, ...).
 
 The `master` target fetches the current state of the website.
 
