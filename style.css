@@ -24,19 +24,20 @@ a:hover, a:focus, a:active, .cheer:hover {
 }
 
 a:active, ::selection {
-  color: #fc8;
   background-color: #48c;
+  color: rgba(0, 0, 0, 0);
   text-shadow:
-    -0.01em -0.01em #fc8,
-    -0.02em -0.02em #fc8,
-    -0.03em -0.03em #fc8,
-    -0.04em -0.04em #fc8,
     -0.05em -0.05em #fc8,
-    +0.01em +0.01em #fc8,
-    +0.02em +0.02em #fc8,
-    +0.03em +0.03em #fc8,
-    +0.04em +0.04em #fc8,
-    +0.05em +0.05em #fc8;
+    -0.04em -0.04em #fc8,
+    -0.03em -0.03em #ec9,
+    -0.02em -0.02em #dca,
+    -0.01em -0.01em #ccb,
+     0.00em  0.00em #bcb,
+    +0.01em +0.01em #bcc,
+    +0.02em +0.02em #acd,
+    +0.03em +0.03em #9ce,
+    +0.04em +0.04em #8cf,
+    +0.05em +0.05em #8cf;
 }
 
 .title, .subtitle { text-align: center; }
