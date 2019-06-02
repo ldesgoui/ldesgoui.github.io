@@ -49,7 +49,7 @@ push: re
 	(cd master \
 		&& git add . \
 		&& git commit --message "$(shell git log -1 --pretty=format:'%s')" \
-		&& git push origin master \
+		&& git push origin master --force \
 	)
 
 clean:
