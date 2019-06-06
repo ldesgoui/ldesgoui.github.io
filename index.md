@@ -20,9 +20,8 @@ I want to write Rust code, hire me
 
 ### Exercises
 
-- [`crawwwlur`](https://github.com/ldesgoui/crawwwlur), a web service to crawl websites
 - [`in1weekend`](https://github.com/ldesgoui/in1weekend), a basic ray tracer
-- [`sys_mock_example`](https://github.com/ldesgoui/sys_mock_example), an example
+- [`crawwwlur`](https://github.com/ldesgoui/crawwwlur), a web service to crawl websites
 
 
 ### My face
