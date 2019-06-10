@@ -16,6 +16,8 @@ I want to write Rust code, hire me
 - [`discord_game_sdk`](https://github.com/ldesgoui/discord_game_sdk), a wrapper
 - [`eia3de`](https://github.com/eia3de/eia3de), a video game
 - [`ldesgoui.github.io`](https://github.com/ldesgoui/ldesgoui.github.io), this website
+- [`serde`](https://github.com/ldesgoui/serdeq), a data processor for serde formats
+- [`srcdsds`](https://github.com/ldesgoui/srcdsds), a SRCDS server manager
 
 
 ### Exercises
