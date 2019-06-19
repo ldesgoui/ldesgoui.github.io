@@ -26,7 +26,7 @@ Seeking an opportunity to facilitate self-growth in a professional environment u
 Programming
 : Rust, Python, Haskell, Elm, C
 
-Linux
+Linux / NixOS
 : deployment target, daily driver since 2014
 
 Autonomous workflow
