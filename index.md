@@ -4,8 +4,6 @@ title: Lucas Desgouilles
 subtitle: Software Developer
 ---
 
-I want to write Rust code, hire me
-
 - Resume [PDF](./resume.pdf) [HTML](./resume.html)
 - <https://github.com/ldesgoui>
 - <https://twitter.com/ldesgoui>
