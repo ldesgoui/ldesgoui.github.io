@@ -45,7 +45,7 @@ master/%.jpg: %.webp | master
 	convert "$<" -quality 75 "$@"
 
 push: re
-	minify -a master
+	minify -vro master/ master/
 	(cd master \
 		&& git add . \
 		&& git commit --message "$(shell git log -1 --pretty=format:'%s')" \
