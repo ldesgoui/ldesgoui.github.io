@@ -1,5 +1,5 @@
 ---
-pagetitle: ldesgoui\_xyz::index
+pagetitle: Lucas Desgouilles, Software Developer
 title: Lucas Desgouilles
 subtitle: Software Developer
 ---
