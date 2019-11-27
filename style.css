@@ -16,7 +16,7 @@ dd { margin-bottom: 1em; }
 dt { font-weight: bold; }
 
 a { text-decoration-style: dotted; }
-a:link, a:visited { color: #8cf; }
+a:link, a:visited { color: #69c; }
 
 a:hover, a:focus, a:active, .cheer:hover {
   outline: 0.1em dotted #fc8;

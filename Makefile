@@ -10,6 +10,7 @@ GENERATED += index.html
 GENERATED += resume.pdf resume.html
 GENERATED += style.css
 GENERATED += avatar.webp avatar.png avatar.jpg
+GENERATED += bimi.svg
 
 GENERATED := $(addprefix master/, $(GENERATED))
 
@@ -43,6 +44,16 @@ master/%.png: %.webp | master
 master/%.jpg: %.webp | master
 	mkdir --parents "$(@D)"
 	convert "$<" -quality 75 "$@"
+
+master/%.jpg: %.webp | master
+	mkdir --parents "$(@D)"
+	convert "$<" -quality 75 "$@"
+
+master/bimi.svg: avatar.webp | master
+	mkdir --parents "$(@D)"
+	convert "$<" -quality 75 bmp:- \
+		| potrace --output "$@" --backend svg \
+			--turdsize 50 --stretch 1 --color "#6699cc" --flat --blacklevel 0.3 --invert
 
 push: re
 	minify -vro master/ master/

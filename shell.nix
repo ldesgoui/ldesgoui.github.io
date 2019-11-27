@@ -11,6 +11,7 @@ pkgs.mkShell {
     imagemagick
     minify
     pandoc
+    potrace
     texlive.combined.scheme-medium
   ];
 }
