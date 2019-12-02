@@ -46,12 +46,14 @@ Autonomous workflow
 2015 - Now
 :   *Contributor to Free Software*
 
-    Contributed self-documenting feature to [PostgREST](https://postgrest.org),
-    documentation to [`specs`](https://docs.rs/specs),
-    package definitions to [`nixpkgs`](https://nixos.org/nixpkgs).
+    Contributions can be found at <https://github.com/ldesgoui>,
+    mostly licensed under MIT, Apache-2.0 or GPLv3.0.
     Author of Rust library [`discord_game_sdk`](https://docs.rs/discord_game_sdk).
-    Licensed most side projects with MIT, Apache-2.0 or GPLv3.0.
-    Contributions can be found at <https://github.com/ldesgoui>.
+    Contributed to
+    [`specs`](https://github.com/amethyst/specs/pulls?q=author%3Aldesgoui),
+    [`dodrio`](https://github.com/fitzgen/dodrio/pulls?q=author%3Aldesgoui),
+    [PostgREST](https://github.com/PostgREST/postgrest/pulls?q=author%3Aldesgoui),
+    [`nixpkgs`](https://github.com/NixOS/nixpkgs/pulls?q=author%3Aldesgoui).
 
 2015 - 2016 (6 months)
 :   *Computer Programming Tutor* [42 - Paris](https://42.fr)
