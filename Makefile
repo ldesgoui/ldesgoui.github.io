@@ -5,7 +5,6 @@
 CSS := style.css
 CSS += 'https://fonts.googleapis.com/css?family=Fira+Sans|Fira+Mono&display=swap'
 
-GENERATED := CNAME
 GENERATED += index.html
 GENERATED += resume.pdf resume.html
 GENERATED += style.css
