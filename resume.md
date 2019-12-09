@@ -6,6 +6,7 @@ mainfont: Fira Sans
 monofont: Fira Mono
 sansfont: Fira Sans
 documentclass: extarticle
+urlcolor: RoyalBlue
 geometry:
 - top=20mm
 - bottom=0mm
@@ -13,12 +14,12 @@ geometry:
 
 <div style="display: none">
 -----
-<ldesgoui@gmail.com> | <https://ldesgoui.xyz> | <https://github.com/ldesgoui>
+<ldesgoui@gmail.com> | <tel:+33688242820> | <https://ldesgoui.xyz> | <https://github.com/ldesgoui>
 -----
 </div>
 
 
-Seeking an opportunity to facilitate self-growth in a professional environment using Rust.
+Seeking an opportunity to facilitate self-growth and skill improvement in a professional environment.
 
 
 # Skillset
@@ -52,7 +53,7 @@ Autonomous workflow
     Contributed to
     [`specs`](https://github.com/amethyst/specs/pulls?q=author%3Aldesgoui),
     [`dodrio`](https://github.com/fitzgen/dodrio/pulls?q=author%3Aldesgoui),
-    [PostgREST](https://github.com/PostgREST/postgrest/pulls?q=author%3Aldesgoui),
+    [`PostgREST`](https://github.com/PostgREST/postgrest/pulls?q=author%3Aldesgoui),
     [`nixpkgs`](https://github.com/NixOS/nixpkgs/pulls?q=author%3Aldesgoui).
 
 2015 - 2016 (6 months)
