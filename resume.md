@@ -16,7 +16,7 @@ geometry:
 
 <div style="display: none">
 -----
-<l@ldesgoui.xyz> | <tel:+33688242820> | <https://ldesgoui.xyz> | <https://github.com/ldesgoui>
+<l@ldesgoui.xyz> | <https://ldesgoui.xyz> | <https://github.com/ldesgoui>
 -----
 </div>
 
